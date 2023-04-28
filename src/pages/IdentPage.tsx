@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 } from "uuid";
 import { useStore } from "../store/AppStore";
+import InputField from "../components/InputField";
 
 const IdentPage = (props: any) => {
 	const navigate = useNavigate();
@@ -31,9 +32,6 @@ const IdentPage = (props: any) => {
 
 	return (
 		<div className="mx-auto w-full">
-			<div className="bg-purple-900 py-4 px-6">
-				<h2 className="mb-2 text-xl font-bold text-white">Askrella DChat</h2>
-			</div>
 			<div className="p-6">
 				<div className="mb-4">
 					<label className="mb-2 block font-bold text-gray-700" htmlFor="roomName">
@@ -62,7 +60,7 @@ const IdentPage = (props: any) => {
 					/>
 				</div>
 				<button
-					className="focus:shadow-outline w-full rounded bg-purple-900 py-2 px-4 font-bold text-white focus:outline-none"
+					className="focus:shadow-outline w-full rounded bg-purple-800 py-2 px-4 font-bold text-white focus:outline-none"
 					type="button"
 					onClick={handleCreateRoomClick}
 				>

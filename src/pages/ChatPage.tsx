@@ -135,11 +135,8 @@ const ChatPage = (props: any) => {
 	};
 
 	return (
-		<div className="flex min-h-screen flex-col">
-			<header className="bg-purple-900 py-4 text-center text-white">
-				<h1 className="text-3xl font-bold">#{getRoomName()}</h1>
-			</header>
-			<div className="flex-1 overflow-y-auto">
+		<div className="flex flex-col">
+			<div className="">
 				<ul className="p-4">
 					{getMessages().map(msg => {
 						if (msg) {
@@ -156,12 +153,12 @@ const ChatPage = (props: any) => {
 				<label className="mr-4 flex-1">
 					<span className="sr-only">Message:</span>
 					<input
-						className="w-full rounded-lg border border-gray-400 py-1 px-2 focus:outline-none"
+						className="w-full rounded-lg border border-gray-400 py-2 px-2 focus:outline-none"
 						value={input}
 						onChange={e => setInput(e.target.value)}
 					/>
 				</label>
-				<button className="rounded-md bg-purple-900 py-1 px-8 text-white" onClick={sendMessage}>
+				<button className="rounded-md bg-purple-800 py-2 px-8 text-white" onClick={sendMessage}>
 					Send
 				</button>
 			</form>
