@@ -34,31 +34,35 @@ const IdentPage = (props: any) => {
 	return (
 		<div className="mx-auto w-full">
 			<div className="p-6">
-				<div className="mb-4">
-					<label className="mb-2 block font-bold text-gray-700" htmlFor="roomName">
+				<div className="mb-4 ">
+					<label className="mb-2 block font-bold text-white" htmlFor="roomName">
 						Room
 					</label>
-					<input
-						className="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none"
-						id="roomName"
-						type="text"
-						placeholder="Enter the room name"
-						value={roomName}
-						onChange={handleRoomNameChange}
-					/>
+					<div className="rounded-md border border-slate-700">
+						<input
+							className="w-full resize-none appearance-none border-none bg-transparent py-2 px-2 leading-tight text-white focus:outline-none"
+							id="roomName"
+							type="text"
+							placeholder="Enter the room name"
+							value={roomName}
+							onChange={handleRoomNameChange}
+						/>
+					</div>
 				</div>
 				<div className="mb-4">
-					<label className="mb-2 block font-bold text-gray-700" htmlFor="username">
+					<label className="mb-2 block font-bold text-white" htmlFor="username">
 						Username
 					</label>
-					<input
-						className="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none"
-						id="username"
-						type="text"
-						placeholder="Enter your username"
-						value={username}
-						onChange={handleUsernameChange}
-					/>
+					<div className="rounded-md border border-slate-700">
+						<input
+							className="w-full resize-none appearance-none border-none bg-transparent py-2 px-2 leading-tight text-white focus:outline-none"
+							id="username"
+							type="text"
+							placeholder="Enter your username"
+							value={username}
+							onChange={handleUsernameChange}
+						/>
+					</div>
 				</div>
 				<button
 					className="focus:shadow-outline w-full rounded bg-purple-800 py-2 px-4 font-bold text-white focus:outline-none"

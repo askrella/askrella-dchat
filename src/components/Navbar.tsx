@@ -53,7 +53,7 @@ function Navbar(props: any) {
 							<h1 className="text-lg font-medium text-white">dchat.askrella.de</h1>
 							{storeRoom && (
 								<>
-									<span className="mx-2">|</span>
+									<span className="mx-2 text-white">|</span>
 									<h2 className="text-lg font-medium text-white">Room: {storeRoom}</h2>
 								</>
 							)}
