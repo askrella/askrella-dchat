@@ -19,7 +19,7 @@ type Message = {
 
 // This is only used for building up the connection
 // Not for message communication
-const relay = "http://45.94.58.164:8765/";
+const relay = "https://gundb.askrella.de";
 const gun = Gun(relay);
 
 const ChatPage = (props: any) => {
