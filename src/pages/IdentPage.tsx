@@ -2,13 +2,13 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { v4 } from "uuid";
 import { useStore } from "../store/AppStore";
-import InputField from "../components/InputField";
 
 const IdentPage = (props: any) => {
 	const navigate = useNavigate();
 
 	// Store
 	const setStoreUsername = useStore((state: any) => state.setUsername);
+	const setStoreRoom = useStore((state: any) => state.setRoom);
 
 	// State
 	const [roomName, setRoomName] = React.useState("");
@@ -17,6 +17,7 @@ const IdentPage = (props: any) => {
 	// Handle events
 	const handleRoomNameChange = (event: any) => {
 		setRoomName(event.target.value);
+		setStoreRoom(event.target.value);
 	};
 
 	const handleUsernameChange = (event: any) => {

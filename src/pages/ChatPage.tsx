@@ -30,6 +30,8 @@ const ChatPage = (props: any) => {
 	const storeUsername = useStore((state: any) => state.username);
 	const setStoreUsername = useStore((state: any) => state.setUsername);
 
+	const setStoreRoom = useStore((state: any) => state.setRoom);
+
 	// Encryption key
 	const [encryptionKey] = useState(location.hash);
 
@@ -38,6 +40,10 @@ const ChatPage = (props: any) => {
 	const [input, setInput] = useState("");
 
 	useEffect(() => {
+		if (params.room) {
+			setStoreRoom(params.room);
+		}
+
 		if (storeUsername == null) {
 			const enteredUsername = window.prompt("Enter your name:") || "Anonymous";
 			setStoreUsername(enteredUsername);
@@ -69,11 +75,7 @@ const ChatPage = (props: any) => {
 	}, []);
 
 	const getGunRoom = () => {
-		return gun.get(getRoomName());
-	};
-
-	const getRoomName = () => {
-		return params.room!;
+		return gun.get(params.room!);
 	};
 
 	const sendMessage = () => {

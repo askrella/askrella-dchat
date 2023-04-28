@@ -3,6 +3,7 @@ import React from "react";
 import { useLocation, useNavigate } from "react-router";
 
 import { Bars3Icon } from "@heroicons/react/24/outline";
+import { useStore } from "../store/AppStore";
 
 interface MenuItem {
 	label: string;
@@ -11,9 +12,13 @@ interface MenuItem {
 
 function Navbar(props: any) {
 	const navigate = useNavigate();
-	const location = useLocation();
-	const [open, setOpen] = React.useState(false);
 
+	// Store
+	const storeRoom = useStore((state: any) => state.room);
+	const clearStore = useStore((state: any) => state.clearStore);
+
+	// State
+	const [open, setOpen] = React.useState(false);
 	const items: MenuItem[] = constructMenuItems();
 
 	function constructMenuItems() {
@@ -22,6 +27,7 @@ function Navbar(props: any) {
 		items.push({
 			label: "Home",
 			onClick: () => {
+				clearStore();
 				setOpen(false);
 				navigate("/");
 			}
@@ -45,6 +51,12 @@ function Navbar(props: any) {
 					<div className="flex">
 						<div className="flex flex-shrink-0 items-center">
 							<h1 className="text-lg font-medium text-white">dchat.askrella.de</h1>
+							{storeRoom && (
+								<>
+									<span className="mx-2">|</span>
+									<h2 className="text-lg font-medium text-white">Room: {storeRoom}</h2>
+								</>
+							)}
 						</div>
 					</div>
 					{items.length > 0 && (
