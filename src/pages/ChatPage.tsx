@@ -20,7 +20,7 @@ type Message = {
 
 // This is only used for building up the connection
 // Not for message communication
-const relay = "https://gundb.askrella.de/gun";
+const relay = ""; // <- You have to specify your own gundb server url here
 const gun = Gun(relay);
 
 const ChatPage = (props: any) => {
