@@ -12,6 +12,10 @@ The application is designed to be highly secure and private, with no central ser
 
 ![image](https://user-images.githubusercontent.com/6507938/235148754-78ab0dd0-2253-446a-b8e5-bee869d8196f.png)
 
+## Configuration
+
+You have to specify a GunDB relay server [here](https://github.com/askrella/askrella-dchat/blob/8ba1cf339df92d97018ac759aea9707dcee278ee/src/pages/ChatPage.tsx#L23) before build & starting.
+
 ## Available Scripts
 
 | Name            | Description                                          |
